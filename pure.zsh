@@ -140,7 +140,7 @@ prompt_pure_preprompt_render() {
 	# Construct the new prompt with a clean preprompt.
 	local -ah ps1
 	ps1=(
-		# $prompt_newline           # Initial newline, for spaciousness.
+		$prompt_newline           # Initial newline, for spaciousness.
 		${(j. .)preprompt_parts}  # Join parts, space separated.
 		$prompt_newline           # Separate preprompt and prompt.
 		$cleaned_ps1
@@ -432,7 +432,7 @@ prompt_pure_setup() {
 
 	if [[ -z $prompt_newline ]]; then
 		# This variable needs to be set, usually set by promptinit.
-		typeset -g prompt_newline=$'\n%{\r%}'
+		typeset -g prompt_newline=$'%{\r%}'
 	fi
 
 	zmodload zsh/datetime
