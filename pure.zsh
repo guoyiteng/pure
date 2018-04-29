@@ -145,7 +145,7 @@ prompt_pure_preprompt_render() {
 		# and after the last newline, leaving us with everything except the
 		# preprompt. This is needed because some software prefixes the prompt
 		# (e.g. virtualenv).
-		cleaned_ps1=${PROMPT%%${prompt_newline}*}${PROMPT##*}
+		cleaned_ps1=${PROMPT%%*}${PROMPT##*${prompt_newline}}
 	fi
 	unset MATCH MBEGIN MEND
 
